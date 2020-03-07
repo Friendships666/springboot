@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smile.mapper.LoginMapper">
+
+    <resultMap id="loginResultMap" type="Login">
+        <result column="id" property="id"/>
+        <result column="login_name" property="loginName"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+
+    <select id="selectLoginList" resultMap="loginResultMap">
+        SELECT id,login_name,password FROM sys_login
+    </select>
+
+</mapper>

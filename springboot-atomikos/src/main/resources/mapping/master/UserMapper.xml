@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smile.mapper.master.UserMapper">
+
+    <resultMap id="userResultMap" type="com.smile.pojo.User">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="no" property="no"/>
+    </resultMap>
+
+
+    <select id="selectUserList" resultMap="userResultMap">
+        SELECT id,name,no FROM base_user
+    </select>
+
+    <insert id="insertUserElement">
+        INSERT INTO base_user VALUES(NULL , #{name}, #{no})
+    </insert>
+
+</mapper>
